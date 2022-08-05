@@ -25,7 +25,7 @@ const Login = ({ setIsLoggedIn }) => {
 
       try {
         //login details are send via axios
-        const data = await axios.post("/auth/login", values);
+        const data = await axios.post("/api/auth/login", values);
         //login confirmation alert
         alert(data.data.message);
         //token is stored in the local storage
