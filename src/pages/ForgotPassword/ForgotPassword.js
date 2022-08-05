@@ -18,7 +18,7 @@ const ForgotPassword = () => {
       try {
 
         //sending the input via axios
-        const data = await axios.post("/auth/forgotpassword", values, {
+        const data = await axios.post("/api/auth/forgotpassword", values, {
           //token is send for authorization of the task
           headers: {
             Authorization: window.localStorage.getItem("myapptoken"),
