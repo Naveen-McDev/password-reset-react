@@ -20,7 +20,7 @@ const ResetPassword = () => {
     onSubmit: async (values) => {
       try {
         // input send using axios npm
-        const data = await axios.post("/auth/resetpassword", values, {
+        const data = await axios.post("/api/auth/resetpassword", values, {
           headers: {
             // token stored in the local storage
             Authorization: window.localStorage.getItem("myapptoken"),
