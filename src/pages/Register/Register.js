@@ -7,10 +7,8 @@ import "./register.css";
 // register page
 
 const Register = () => {
-
   // formik
   const formik = useFormik({
-
     //initial form value
     initialValues: {
       name: "",
@@ -21,7 +19,6 @@ const Register = () => {
     //on form submission
     onSubmit: async (values) => {
       try {
-        
         // data posted to db using axios
         const data = await axios.post("/api/auth/register", values);
 
@@ -29,9 +26,8 @@ const Register = () => {
         alert(data.data.message);
         
       } catch (error) {
-
         //error message is shown in the alert
-        alert(error.response.data.message)
+        alert(error.response.data.message);
       }
     },
   });
@@ -45,7 +41,6 @@ const Register = () => {
 
           {/* form */}
           <form onSubmit={formik.handleSubmit} className="register_form">
-
             {/* name input */}
             <input
               id="name"
@@ -57,7 +52,7 @@ const Register = () => {
               placeholder="Name"
             />
 
-{/* email input */}
+            {/* email input */}
             <input
               id="email"
               name="email"
@@ -68,7 +63,7 @@ const Register = () => {
               placeholder="Email"
             />
 
-{/* password input */}
+            {/* password input */}
             <input
               id="password"
               name="password"
@@ -78,7 +73,7 @@ const Register = () => {
               className="register_input"
               placeholder="Password"
             />
-{/* register button */}
+            {/* register button */}
             <button className="register_btn" type="submit">
               Register
             </button>
@@ -87,7 +82,6 @@ const Register = () => {
           <p>
             Already a member?
             <span className="register_footer">
-
               {/* navigation to login page in the application */}
               <Link to={"/login"}>Login</Link>
             </span>
