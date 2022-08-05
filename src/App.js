@@ -9,32 +9,33 @@ import ResetPassword from "./pages/ResetPassword/ResetPassword";
 import VerifyEmail from "./pages/VerifyEmail/VerifyEmail";
 import { useState } from "react";
 
-
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  
 
- const handleLogout = () => {
-      window.localStorage.removeItem("myapptoken");
-      setIsLoggedIn(false);
-      
- }
- 
+  // function for logout
+  const handleLogout = () => {
+    window.localStorage.removeItem("myapptoken");
+    setIsLoggedIn(false);
+  };
 
   return (
     <div className="App">
       <Routes>
         <Route
           path="/"
-          element={<Home isLoggedIn={isLoggedIn}  handleLogout={handleLogout}/>}
+          element={<Home isLoggedIn={isLoggedIn} handleLogout={handleLogout} />}
         />
-        <Route path="/login" element={<Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>} />
+        <Route
+          path="/login"
+          element={
+            <Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+          }
+        />
         <Route path="/register" element={<Register />} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route path="/resetpassword" element={<ResetPassword />} />
         <Route path="/resetpassword" element={<ResetPassword />} />
         <Route path="/verifyEmail" element={<VerifyEmail />} />
-        
       </Routes>
     </div>
   );
