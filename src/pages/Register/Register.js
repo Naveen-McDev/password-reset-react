@@ -20,7 +20,7 @@ const Register = () => {
     onSubmit: async (values) => {
       try {
         // data posted to db using axios
-        const data = await axios.post("/api/auth/register", values);
+        const data = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api/auth/register`, values);
 
         // success message is show in the alert
         alert(data.data.message);
